@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CS221 - Theory of Programming Languages Project</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/lightbox.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/dracula.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body onload="start()">
+<header id="header" style="border: 0px solid black">
+    <div class="container"style="border: 0px solid black">
+    </div>
+</header>
+<!--End of header-->
+
+<!--Home Slider-->
+<section id="home-slider" style="border: 0px solid black">
+    <div class="container">
+        <div class="row">
+            <div class="main-slider">
+                <div class="slide-text">
+                    <h1>CS221 - Theory of Programming Language Project</h1>
+                    <p>This has been submitted to Dr. Elcid Serrano as a partial fulfillment to the requirements of CS221 course.</p>
+                    <a  href="index.html" class="btn btn-common">C++ Language</a>
+                    <a  id="playground" class="btn btn-common">C Language</a>
+                </div>
+                <img src="images/home/slider/mapua.png" class="slider-hill" alt="slider image">
+            </div>
+        </div>
+    </div>
+    <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
+</section>
+<!--End of home sliders-->
+
+<!--Body-->
+<section id="page-breadcrumb" >
+    <div class="vertical-center sun">
+        <div class="container">
+            <div class="row" >
+                <div class="action">
+                    <div class="col-sm-12" id="scrollingPosition">
+                        <h1 class="title">DragnDropC</h1>
+                        <p>Aaron Carl Fernandez, Davie Marie Sumagaysay, Earl Vic Hurna, Terence Ong, Sonam Sanghu</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container" style="padding:10px;border:0px solid #4a4a4a; margin: 0px;float: none;margin-left: auto;margin-right:auto; width: 90%; box-shadow: 4px 4px 8px 2px #999999">
+    <div class="row">
+        <section class="col-md-8 col-xs-12" style="border:0px solid #4a4a4a; border-style: inset;padding: 0px;">
+            <div id="blocklyDiv" class="col-md-12" style="height: 480px;margin: 0px;">
+            </div>
+            <xml id="toolbox">
+                <category name="Variables">
+                    <category name="Variable">
+                        <block type="variables_declare"></block>
+                        <block type="variables_get"></block>
+                        <block type="variables_set"></block>
+                    </category>
+                    <category name="Pointer">
+                        <block type="variables_pointer_declare"></block>
+                        <block type="variables_pointer_get"></block>
+                        <block type="variables_pointer_set">
+                            <value name="VAR">
+                                <block type="variables_pointer_get">
+                                </block>
+                            </value></block>
+                        <block type="variables_pointer_&"></block>
+                        <block type="variables_pointer_*"></block>
+                    </category>
+                    <category name="Array">
+                        <block type="variables_array_declare"></block>
+                        <block type="variables_array_get"></block>
+                        <block type="variables_array_set"></block>
+                    </category>
+                </category>
+                <category name="Arithmetics">
+                    <block type="math_number"></block>
+                    <block type="math_arithmetic"></block>
+                    <block type="math_modulo"></block>
+                </category>
+                <category name="Loops">
+                    <block type="controls_whileUntil"></block>
+                    <block type="controls_doWhile"></block>
+                    <block type="controls_for"></block>
+                    <block type="controls_flow_statements"></block>
+                </category>
+                <category name="Logic">
+                    <block type="controls_if"></block>
+                    <block type="controls_switch"></block>
+                    <block type="controls_switch_break"></block>
+                    <block type="logic_compare"></block>
+                    <block type="logic_operation"></block>
+                    <block type="logic_negate"></block>
+                    <block type="logic_boolean"></block>
+                    <block type="logic_null"></block>
+                    <block type="logic_ternary"></block>
+                </category>
+                <category name="Functions" custom="PROCEDURE">
+                    <block type="procedures_defnoreturn"></block>
+                    <block type="procedures_defreturn"></block>
+                    <block type="procedures_ifreturn"></block>
+                </category>
+                </category>
+                <category name="Structure" custom="STRUCTURE">
+                    <block type="structure_define"></block>
+                    <block type="structure_declare"></block>
+                </category>
+                <category name="Library">
+                    <category name="Stdio">
+                        <block type="library_stdio_printf"></block>
+                        <block type="library_stdio_text"></block>
+                        <block type='library_stdio_newLine'></block>
+                        <block type="library_stdio_scanf"></block>
+                    </category>
+                    <category name="Stdlib">
+                        <block type="library_stdlib_convert"></block>
+                        <block type="library_stdlib_rand">
+                            <value name="VAR">
+                                <block type="library_stdlib_rand_scope">
+                                    <value name="A">
+                                        <block type="library_stdlib_number_forRandScope1"></block>
+                                    </value>
+                                    <value name="B">
+                                        <block type="library_stdlib_number_forRandScope100"></block>
+                                    </value>
+                                </block>
+                            </value>
+                        </block>
+                        <block type="library_stdlib_malloc">
+                            <value name="VAR">
+                                <block type="library_stdlib_arithmetic_forMalloc">
+                                    <value name="A">
+                                        <block type="library_stdlib_sizeof_forMalloc"></block>
+                                    </value>
+                                    <value name="B">
+                                        <block type="library_stdlib_number_forMalloc"></block>
+                                    </value>
+                                </block>
+                            </value>
+                        </block>
+                        <block type="library_stdlib_arithmetic_forMalloc">
+                            <value name="A">
+                                <block type="library_stdlib_sizeof_forMalloc"></block>
+                            </value>
+                            <value name="B">
+                                <block type="library_stdlib_number_forMalloc"></block>
+                            </value>
+                        </block>
+                        <block type="library_stdlib_free"></block>
+                        <block type="library_stdlib_exit"></block>
+                    </category>
+                    <category name="String">
+                        <block type="library_string_strlen"></block>
+                        <block type="library_string_strcat"></block>
+                        <block type="library_string_strcpy"></block>
+                        <block type="library_string_strcmp"></block>
+                    </category>
+                    <category name="Math">
+                        <block type="library_math_abs"></block>
+                        <block type="library_math_trig"></block>
+                        <block type="library_math_logs"></block>
+                        <block type="library_math_pow"></block>
+                        <block type="library_math_exp"></block>
+                        <block type="library_math_sqrt"></block>
+                        <block type="library_math_round"></block>
+                        <block type="library_math_numcheck"></block>
+                        <block type="library_math_numcompare"></block>
+                    </category>
+                    <category name="Time">
+                        <block type="library_time_current"></block>
+                        <block type="library_time_requiredTime"></block>
+                    </category>
+                </category>
+                <category name="Others">
+                    <block type='comment'>
+                        <value name="VAR0">
+                            <block type="library_stdio_text"></block>
+                        </value>
+                    </block>
+                    <block type="library_stdio_text"></block>
+                    <block type="math_number"></block>
+                    <block type="define_declare"></block>
+                    <block type="define_get"></block>
+                </category>
+            </xml>
+        </section>
+        <section class="col-md-4 col-xs-12" style="border:0px solid red ; float: left;padding: 0px;">
+            <div class="col-md-12 col-xs-12" style="height: 480px; overflow: auto;">
+                <div id="code-wrapper" class="panel panel-default col-md-12" style="border: 0px solid black;height: 95%;width:100%">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Generated Code</strong></h3>
+                    </div>
+                    <pre style="height: 420px;margin: 0px; border:2px solid #CCCCCC" class="panel-body">
+                        <code id="code4C" class="cpp"></code>
+                    </pre>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script>
+    var blocklyArea = document.getElementById('blocklyArea');
+    var blocklyDiv = document.getElementById('blocklyDiv');
+</script>
+
+<script type="text/javascript" src="blockly/blockly_uncompressed.js"></script>
+<script type="text/javascript" src="blockly/blocks_compressed.js"></script>
+<script type="text/javascript" src="blockly/msg/js/en.js"></script>
+<script type="text/javascript" src="blockly/generators/cake.js"></script>
+<script type="text/javascript" src="cake_compressed.js"></script>
+<script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/code.js"></script>
+<script type="text/javascript" src="js/FileSaver.js"></script>
+<script type="text/javascript" src="js/prettify.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+<script type="text/javascript" src="js/lightbox.min.js"></script>
+<script type="text/javascript" src="js/wow.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/scrolling.js" ></script>
+</body>
+</html>
