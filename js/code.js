@@ -19,16 +19,40 @@ function start() {
   Blockly.addChangeListener(renderContent);
 }
 
-function renderContent() {
-  var content = document.getElementById('code4C');
-  if(content == 'Undefined' || content == 'undefined' || content == null){
-    content = document.getElementById('code4Cplusplus');
-    var code = Blockly.lisa.workspaceToCode();
-    content.textContent = code;
-  }else{
-    var code = Blockly.cake.workspaceToCode();
-    content.textContent = code;
+function currentChosenLanguage() {
+	var content = document.getElementById('code4C');
+	if(content == 'Undefined' || content == 'undefined' || content == null){
+		return "c++";
+	} else {
+		return "c";
+	}
+}
+
+function workspaceToCode() {
+	console.log(currentChosenLanguage());
+	if(currentChosenLanguage() == "c++"){
+		var content = document.getElementById('code4Cplusplus');
+		var code = Blockly.lisa.workspaceToCode();
+		content.textContent = code;
+	}else{
+		var content = document.getElementById('code4C');
+		var code = Blockly.cake.workspaceToCode();
+		content.textContent = code;
   }
+  return content.textContent;
+}
+
+function renderContent() {
+  workspaceToCode();
+}
+
+function onSave() {
+	var blob = new Blob([workspaceToCode()], {type: "text/plain;charset=utf-8"});
+	if(currentChosenLanguage() == "c++"){
+		saveAs(blob, "main.cpp");
+	}else{
+		saveAs(blob, "main.c");
+	}
 }
 
 /**
