@@ -55,6 +55,7 @@ function onSave() {
 	}
 }
 
+
 /**
  * Discard all blocks from the workspace.
  */
